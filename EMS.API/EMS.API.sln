@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.4.11605.240 stable
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMS.API", "EMS.API.csproj", "{6E7DBC0C-EDA6-6A42-C914-4B421CFA4F34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMS.Tests", "..\EMS.Tests\EMS.Tests.csproj", "{DED26406-1A64-7121-9F53-ABD491BF0716}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E7DBC0C-EDA6-6A42-C914-4B421CFA4F34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E7DBC0C-EDA6-6A42-C914-4B421CFA4F34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E7DBC0C-EDA6-6A42-C914-4B421CFA4F34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E7DBC0C-EDA6-6A42-C914-4B421CFA4F34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DED26406-1A64-7121-9F53-ABD491BF0716}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DED26406-1A64-7121-9F53-ABD491BF0716}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DED26406-1A64-7121-9F53-ABD491BF0716}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DED26406-1A64-7121-9F53-ABD491BF0716}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ED490992-40A7-494E-8E26-993A4658202F}
+	EndGlobalSection
+EndGlobal

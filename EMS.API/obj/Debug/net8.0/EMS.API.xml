@@ -1,0 +1,235 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EMS.API</name>
+    </assembly>
+    <members>
+        <member name="T:EMS.API.Controllers.AuthController">
+            <summary>
+            Exposes registration and login endpoints for dashboard users.
+            </summary>
+        </member>
+        <member name="M:EMS.API.Controllers.AuthController.#ctor(EMS.API.Services.AuthService)">
+            <summary>
+            Exposes registration and login endpoints for dashboard users.
+            </summary>
+        </member>
+        <member name="M:EMS.API.Controllers.AuthController.Register(EMS.API.DTOs.RegisterRequestDto,System.Threading.CancellationToken)">
+            <summary>
+            Registers a new Admin or Viewer user.
+            </summary>
+        </member>
+        <member name="M:EMS.API.Controllers.AuthController.Login(EMS.API.DTOs.LoginRequestDto,System.Threading.CancellationToken)">
+            <summary>
+            Authenticates a user and returns a JWT token on success.
+            </summary>
+        </member>
+        <member name="T:EMS.API.Controllers.EmployeesController">
+            <summary>
+            Exposes CRUD, pagination, and dashboard endpoints for employee management.
+            </summary>
+        </member>
+        <member name="M:EMS.API.Controllers.EmployeesController.#ctor(EMS.API.Services.EmployeeService)">
+            <summary>
+            Exposes CRUD, pagination, and dashboard endpoints for employee management.
+            </summary>
+        </member>
+        <member name="M:EMS.API.Controllers.EmployeesController.GetAll(EMS.API.DTOs.EmployeeQueryParams,System.Threading.CancellationToken)">
+            <summary>
+            Returns a paged, filtered, and sorted employee list.
+            </summary>
+        </member>
+        <member name="M:EMS.API.Controllers.EmployeesController.GetById(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Returns a single employee by id.
+            </summary>
+        </member>
+        <member name="M:EMS.API.Controllers.EmployeesController.GetDashboard(System.Threading.CancellationToken)">
+            <summary>
+            Returns the dashboard summary payload.
+            </summary>
+        </member>
+        <member name="M:EMS.API.Controllers.EmployeesController.Create(EMS.API.DTOs.EmployeeRequestDto,System.Threading.CancellationToken)">
+            <summary>
+            Creates a new employee record.
+            </summary>
+        </member>
+        <member name="M:EMS.API.Controllers.EmployeesController.Update(System.Int32,EMS.API.DTOs.EmployeeRequestDto,System.Threading.CancellationToken)">
+            <summary>
+            Updates an existing employee record.
+            </summary>
+        </member>
+        <member name="M:EMS.API.Controllers.EmployeesController.Delete(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Deletes an employee record.
+            </summary>
+        </member>
+        <member name="T:EMS.API.Data.AppDbContext">
+            <summary>
+            EF Core database context for the Employee Management System.
+            </summary>
+        </member>
+        <member name="M:EMS.API.Data.AppDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{EMS.API.Data.AppDbContext})">
+            <summary>
+            EF Core database context for the Employee Management System.
+            </summary>
+        </member>
+        <member name="T:EMS.API.Data.AppDbContextFactory">
+            <summary>
+            Design-time factory used by Entity Framework tools to create the DbContext.
+            </summary>
+        </member>
+        <member name="T:EMS.API.DTOs.EmployeeRequestDto">
+            <summary>
+            Request payload used to create or update an employee.
+            </summary>
+        </member>
+        <member name="T:EMS.API.DTOs.EmployeeResponseDto">
+            <summary>
+            Response payload sent to the frontend for employee records.
+            </summary>
+        </member>
+        <member name="T:EMS.API.DTOs.EmployeeQueryParams">
+            <summary>
+            Query string parameters for the employee list endpoint.
+            </summary>
+        </member>
+        <member name="T:EMS.API.DTOs.PagedResult`1">
+            <summary>
+            Generic paged result wrapper returned by the employees list API.
+            </summary>
+        </member>
+        <member name="T:EMS.API.DTOs.DashboardSummaryDto">
+            <summary>
+            Dashboard payload returned in a single API call.
+            </summary>
+        </member>
+        <member name="T:EMS.API.DTOs.DepartmentBreakdownDto">
+            <summary>
+            Represents one department's contribution to the workforce mix.
+            </summary>
+        </member>
+        <member name="T:EMS.API.DTOs.RegisterRequestDto">
+            <summary>
+            Registration request payload.
+            </summary>
+        </member>
+        <member name="T:EMS.API.DTOs.LoginRequestDto">
+            <summary>
+            Login request payload.
+            </summary>
+        </member>
+        <member name="T:EMS.API.DTOs.AuthResponseDto">
+            <summary>
+            Authentication response payload.
+            </summary>
+        </member>
+        <member name="T:EMS.API.DTOs.ServiceResult`1">
+            <summary>
+            Generic service result used to keep controller actions thin.
+            </summary>
+        </member>
+        <member name="T:EMS.API.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:EMS.API.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:EMS.API.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:EMS.API.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:EMS.API.Models.AppUser">
+            <summary>
+            Represents an application user that can authenticate into the EMS dashboard.
+            </summary>
+        </member>
+        <member name="T:EMS.API.Models.Employee">
+            <summary>
+            Represents an employee record persisted in SQL Server.
+            </summary>
+        </member>
+        <member name="T:EMS.API.Services.AuthService">
+            <summary>
+            Handles user registration, login, BCrypt verification, and JWT generation.
+            </summary>
+        </member>
+        <member name="M:EMS.API.Services.AuthService.#ctor(EMS.API.Data.AppDbContext,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Handles user registration, login, BCrypt verification, and JWT generation.
+            </summary>
+        </member>
+        <member name="M:EMS.API.Services.AuthService.RegisterAsync(EMS.API.DTOs.RegisterRequestDto,System.Threading.CancellationToken)">
+            <summary>
+            Registers a new user with a hashed password.
+            </summary>
+        </member>
+        <member name="M:EMS.API.Services.AuthService.LoginAsync(EMS.API.DTOs.LoginRequestDto,System.Threading.CancellationToken)">
+            <summary>
+            Validates submitted credentials against the stored BCrypt hash.
+            </summary>
+        </member>
+        <member name="M:EMS.API.Services.AuthService.GenerateToken(EMS.API.Models.AppUser)">
+            <summary>
+            Generates a signed JWT that carries the user's id, username, and role.
+            </summary>
+        </member>
+        <member name="T:EMS.API.Services.EmployeeRepository">
+            <summary>
+            EF Core implementation of the employee repository contract.
+            </summary>
+        </member>
+        <member name="M:EMS.API.Services.EmployeeRepository.#ctor(EMS.API.Data.AppDbContext)">
+            <summary>
+            EF Core implementation of the employee repository contract.
+            </summary>
+        </member>
+        <member name="T:EMS.API.Services.EmployeeService">
+            <summary>
+            Contains all employee business logic including filtering, sorting, pagination, and CRUD validation.
+            </summary>
+        </member>
+        <member name="M:EMS.API.Services.EmployeeService.#ctor(EMS.API.Services.IEmployeeRepository)">
+            <summary>
+            Contains all employee business logic including filtering, sorting, pagination, and CRUD validation.
+            </summary>
+        </member>
+        <member name="M:EMS.API.Services.EmployeeService.GetAllAsync(EMS.API.DTOs.EmployeeQueryParams,System.Threading.CancellationToken)">
+            <summary>
+            Returns a server-filtered and server-paginated employee list.
+            </summary>
+        </member>
+        <member name="M:EMS.API.Services.EmployeeService.GetByIdAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Returns a single employee by identifier.
+            </summary>
+        </member>
+        <member name="M:EMS.API.Services.EmployeeService.CreateAsync(EMS.API.DTOs.EmployeeRequestDto,System.Threading.CancellationToken)">
+            <summary>
+            Creates a new employee after server-side validation.
+            </summary>
+        </member>
+        <member name="M:EMS.API.Services.EmployeeService.UpdateAsync(System.Int32,EMS.API.DTOs.EmployeeRequestDto,System.Threading.CancellationToken)">
+            <summary>
+            Updates an existing employee if it exists and the email remains unique.
+            </summary>
+        </member>
+        <member name="M:EMS.API.Services.EmployeeService.DeleteAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Deletes an employee if it exists.
+            </summary>
+        </member>
+        <member name="M:EMS.API.Services.EmployeeService.GetDashboardAsync(System.Threading.CancellationToken)">
+            <summary>
+            Computes dashboard summary metrics and recent employees in a single service call.
+            </summary>
+        </member>
+        <member name="T:EMS.API.Services.IEmployeeRepository">
+            <summary>
+            Data-access abstraction for employee persistence and query execution.
+            </summary>
+        </member>
+    </members>
+</doc>
